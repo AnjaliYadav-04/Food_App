@@ -1,0 +1,67 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+<style>
+  body {
+    background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1650&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .form-container {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-card {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #d84315;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .btn-save {
+    width: 100%;
+    background: #d84315;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+    margin-top: 10px;
+  }
+
+  .btn-save:hover {
+    background: #bf360c;
+  }
+</style>
+
+<div class="container form-container">
+  <div class="form-card">
+    <div class="form-title">🍲 Add / Edit Item</div>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        {{ form.as_p }}
+      </div>
+      <button type="submit" class="btn btn-save">Save</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

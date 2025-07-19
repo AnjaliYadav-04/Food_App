@@ -1,0 +1,81 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+<style>
+  body {
+    background: linear-gradient(to right, #e0f7fa, #80deea);
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .login-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    background: #00acc1;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .form-group label {
+    font-weight: 600;
+  }
+
+  .form-control {
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: #00acc1;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s;
+  }
+
+  .btn-submit:hover {
+    background: #00838f;
+  }
+</style>
+
+<div class="container login-container">
+  <div class="card">
+    <div class="card-header">
+      Login
+    </div>
+    <div class="card-body">
+      <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="form-group mb-3">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+              <div class="text-danger small">{{ field.errors|striptags }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+        <button type="submit" class="btn-submit">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

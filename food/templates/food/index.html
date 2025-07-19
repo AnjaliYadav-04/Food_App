@@ -1,0 +1,55 @@
+{%  extends 'food/base.html' %}  
+{#{% load staticfiles %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    {% block body %}
+<div class="container mt-4">
+    {% for item in item_list %}
+    <div class="row mb-4 align-items-center">
+        <!-- Image Column -->
+        <div class="col-md-3 offset-md-1 text-center">
+            <img src="{{ item.item_image }}" alt="{{ item.item_name }}" class="img-fluid rounded" style="height: 150px; object-fit: cover;">
+        </div>
+
+        <!-- Text Column -->
+        <div class="col-md-6">
+            <h3>{{ item.item_name }}</h3>
+            <h5>{{ item.item_desc }}</h5>
+            <h6>₹{{ item.item_price }}</h6>
+            <h6>{{item.user_name}}</h6>
+        </div>
+
+        <!-- Button -->
+        <div class="col-md-2">
+            <a href="{% url 'food:detail' item.id %}" class="btn btn-success">Details</a>
+
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+         {% comment %} this is old code {% endcomment %}
+           <ul>
+              <li>
+                                   {#        {{ item.id }} -- {{ item.item_name }}#}
+                                   {#     <a href="/food/{{ item.id }}">{{ item.id }} -- {{ item.item_name }}</a>#}
+                <a href="">{{ item.id }} -- {{ item.item_name }}</a>
+              </li>
+           </ul>
+     
+</body>
+</html>
