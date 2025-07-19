@@ -48,32 +48,34 @@ Use Django signals for event handling and implement CBVs as a clean alternative 
 
 ## 🛠️ Installation & Setup
 
-```bash
-# Clone the repository
+### Clone the repository
 git clone https://github.com/AnjaliYadav-04/Food_App.git
 cd Food_App
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Run migrations
+### Run migrations
 python manage.py migrate
 
-# Start the development server
+### Start the development server
 python manage.py runserver
 
+---
 
-##🚢 Deployment Guide
-# You can deploy this Django app on platforms like Render, Heroku, or PythonAnywhere. Here’s a quick guide for Render:
+## 🚢 Deployment Guide
+### You can deploy this Django app on platforms like Render, Heroku, or PythonAnywhere. Here’s a quick guide for Render:
 -Push code to GitHub.
 -Sign in to Render and create a new Web Service.
 -Connect your GitHub repo.
 
-# Set build command:
+### Set build command:
 -pip install -r requirements.txt
 
-# Set start command:
+### Set start command:
 -gunicorn Food_App.wsgi:application
 
+---
+
 ## 👤 Author
-# Anjali Yadav
+### Anjali Yadav
