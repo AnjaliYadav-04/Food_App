@@ -67,7 +67,7 @@ python manage.py runserver
 ### You can deploy this Django app on platforms like Render, Heroku, or PythonAnywhere. Here’s a quick guide for Render:
 -Push code to GitHub.
 -Sign in to Render and create a new Web Service.
--Connect your GitHub repo.
+-Connect your GitHub repository
 
 ### Set build command:
 -pip install -r requirements.txt
@@ -79,3 +79,4 @@ python manage.py runserver
 
 ## 👤 Author
 ### Anjali Yadav
+
